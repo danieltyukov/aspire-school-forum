@@ -8,6 +8,10 @@ body {
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .main {
     max-width: 800px;
     margin: 60px auto;
@@ -16,4 +20,35 @@ body {
     background-color: white;
 
     box-shadow: 5px 10px #888888;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 20px auto 30px auto;
+    font-weight: 900;
+}
+
+.question-list-item {
+    margin-bottom: 20px;
+}
+
+.question-list-item a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.question-list-item-title {
+    color: black;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.question-list-item-author {
+    color: lightgray;
+    margin: 0;
 }
