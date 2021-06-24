@@ -1,10 +1,13 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Question
 
 
 def homePage(request):
+    questions = Question.objects.all().order_by('-created_at')
     context = {
-        'title': 'World'
+        'questions': questions
     }
     return render(request, 'homepage.html', context)
+
+def questionPage(request, id):
+    return None
