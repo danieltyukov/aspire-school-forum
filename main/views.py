@@ -7,4 +7,4 @@ def homePage(request):
     context = {
         'title': 'World'
     }
-    return render(request, 'homePage.html', context)
+    return render(request, 'homepage.html', context)
