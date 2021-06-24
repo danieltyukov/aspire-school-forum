@@ -12,6 +12,11 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 .main {
     max-width: 800px;
     margin: 60px auto;
@@ -20,6 +25,32 @@ a {
     background-color: white;
 
     box-shadow: 5px 10px #888888;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 24px;
+
+    border-bottom: 1px solid lightgray;
+}
+
+.user-menu ul li a,
+.main-menu ul li a {
+    color: black;
+    font-weight: 700;
+}
+
+.user-menu ul li a:hover,
+.main-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.user-menu ul li {
+    display: inline;
+    margin-left: 12px;
 }
 
 .page {
