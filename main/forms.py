@@ -24,3 +24,8 @@ class RegisterUserForm(UserCreationForm):
         self.fields['password1'].widget.attrs = {'placeholder': 'password'}
         self.fields['password2'].widget.attrs = {
             'placeholder': 'confirm password'}
+
+
+class LoginForm(AuthenticationForm):
+    class Meta:
+        fields = '__all__'

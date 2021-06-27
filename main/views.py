@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Question, Response
-from .forms import RegisterUserForm
+from .forms import RegisterUserForm, LoginForm
 
 
 def registerPage(request):
@@ -23,6 +23,7 @@ def registerPage(request):
         'form': form
     }
     return render(request, 'register.html', context)
+
 
 def loginPage(request):
     form = LoginForm()
