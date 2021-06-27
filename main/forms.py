@@ -29,3 +29,15 @@ class RegisterUserForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     class Meta:
         fields = '__all__'
+
+
+class NewQuestionForm(forms.ModelForm):
+    class Meta:
+        model = Question
+        fields = ['title', 'body']
+        widgets = {
+            'title': forms.TextInput(attrs={
+                'autofocus': True,
+                'placeholder': 'Type Your Post Title'
+            })
+        }
