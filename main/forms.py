@@ -41,3 +41,9 @@ class NewQuestionForm(forms.ModelForm):
                 'placeholder': 'Type Your Post Title'
             })
         }
+
+
+class NewResponseForm(forms.ModelForm):
+    class Meta:
+        model = Response
+        fields = ['body']
