@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from .models import Question
+from .forms import RegisterUserForm
 
 
 def registerPage(request):
+    form = RegisterUserForm()
     context = {
+        "form": form
     }
     return render(request, "register.html", context)
 
