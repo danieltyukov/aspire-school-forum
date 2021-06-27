@@ -49,6 +49,25 @@ def logoutPage(request):
     return redirect('login')
 
 
+@login_required(login_url='register')
+def newQuestionPage(request):
+    form = NewQuestionForm()
+
+    if request.method == 'POST':
+        try:
+            form = NewQuestionForm(request.POST)
+            if form.is_valid():
+                question = form.save(commit=False)
+                question.author = request.user
+                question.save()
+        except Exception as e:
+            print(e)
+            raise
+
+    context = {'form': form}
+    return render(request, 'new-question.html', context)
+
+
 def homePage(request):
     questions = Question.objects.all().order_by('-created_at')
     context = {
