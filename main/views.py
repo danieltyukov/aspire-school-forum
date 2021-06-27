@@ -43,6 +43,12 @@ def loginPage(request):
     return render(request, 'login.html', context)
 
 
+@login_required(login_url='register')
+def logoutPage(request):
+    logout(request)
+    return redirect('login')
+
+
 def homePage(request):
     questions = Question.objects.all().order_by('-created_at')
     context = {
