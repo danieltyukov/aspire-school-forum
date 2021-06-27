@@ -1,1 +1,1 @@
-﻿# 🏫 Django Built Open Sourced School Forum
+﻿# 🏫 Django Built Open Source School Forum
