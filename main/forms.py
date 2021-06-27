@@ -18,3 +18,9 @@ class RegisterUserForm(UserCreationForm):
                 'placeholder': 'danieltyukov',
             })
         }
+
+    def __init__(self, *args, **kwargs):
+        super(RegisterUserForm, self).__init__(*args, **kwargs)
+        self.fields['password1'].widget.attrs = {'placeholder': 'password'}
+        self.fields['password2'].widget.attrs = {
+            'placeholder': 'confirm password'}
