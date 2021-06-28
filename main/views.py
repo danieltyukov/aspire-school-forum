@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .models import Question, Response
-from .forms import RegisterUserForm, LoginForm, NewQuestionForm, NewResponseForm
+from .forms import RegisterUserForm, LoginForm, NewQuestionForm, NewResponseForm, NewReplyForm
 
 
 def registerPage(request):
@@ -100,3 +100,24 @@ def questionPage(request, id):
         'reply_form': reply_form,
     }
     return render(request, 'question.html', context)
+
+
+@login_required(login_url='register')
+def replyPage(request):
+    if request.method == 'POST':
+        try:
+            form = NewReplyForm(request.POST)
+            if form.is_valid():
+                question_id = request.POST.get('question')
+                parent_id = request.POST.get('parent')
+                reply = form.save(commit=False)
+                reply.user = request.user
+                reply.question = Question(id=question_id)
+                reply.parent = Response(id=parent_id)
+                reply.save()
+                return redirect('/question/'+str(question_id)+'#'+str(reply.id))
+        except Exception as e:
+            print(e)
+            raise
+
+    return redirect('index')
