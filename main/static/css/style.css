@@ -196,33 +196,3 @@ body {
     padding: 30px;
   }
   
-  .reply-form-container {
-    display: none;
-  }
-  
-  .reply-form-container.enabled {
-    display: block;
-  }
-  
-  .reply-form textarea {
-    width: 100%;
-  }
-  
-  .reply-form-cancel-button {
-    font-weight: 600;
-    color: orange;
-    background-color: transparent;
-    border: none;
-    padding: 4px 12px;
-    cursor: pointer;
-  }
-  
-  .reply-form-submit-button {
-    font-weight: 600;
-    color: white;
-    background-color: orange;
-    border: none;
-    padding: 4px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
