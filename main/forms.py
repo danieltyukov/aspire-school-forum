@@ -36,9 +36,16 @@ class NewQuestionForm(forms.ModelForm):
         model = Question
         fields = ['title', 'body']
         widgets = {
-            'title': forms.TextInput(attrs={
-                'autofocus': True,
-                'placeholder': 'Type Your Post Title'
+            'title':
+                forms.TextInput(attrs={
+                    'autofocus': True,
+                    'placeholder': 'Type Your Post Title',
+                    'max_length': 1
+
+
+                }),
+            'body': forms.Textarea(attrs={
+                'maxlength': 1000
             })
         }
 
