@@ -40,9 +40,6 @@ class NewQuestionForm(forms.ModelForm):
                 forms.TextInput(attrs={
                     'autofocus': True,
                     'placeholder': 'Type Your Post Title',
-                    'max_length': 1
-
-
                 }),
             'body': forms.Textarea(attrs={
                 'maxlength': 1000
